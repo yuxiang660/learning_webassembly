@@ -4,6 +4,12 @@ all: build
 build: clean
 	em++ -std=c++20 main.cpp --no-entry -o main.js
 
+compile:
+	em++ -std=c++20 -c main.cpp -o main.o
+
+link:
+	em++ main.o -o main.js -Os
+
 serve:
 	python -m SimpleHTTPServer
 
