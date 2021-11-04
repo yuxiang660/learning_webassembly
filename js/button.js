@@ -7,7 +7,6 @@ async function button() {
    var str = UTF8ToString(ptr);
    console.log(typeof(str));
    console.log(str);
-   // ptr = allocateUTF8("你好，Emscripten！");
-   // Module._SetString(ptr);
-   // _free(ptr);
+   ptr = allocateUTF8OnStack("你好，Emscripten！");
+   Module._SetString(ptr);
 }
